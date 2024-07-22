@@ -4,6 +4,7 @@ import com.joy.productservicejune24.dtos.FakeStoreProductDto;
 import com.joy.productservicejune24.exceptions.ProductNotFoundException;
 import com.joy.productservicejune24.models.Category;
 import com.joy.productservicejune24.models.Product;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpMessageConverterExtractor;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+//@Primary
 public class FakeStoreProductService implements ProductService{
     private RestTemplate restTemplate;
 
@@ -81,6 +83,11 @@ public class FakeStoreProductService implements ProductService{
     @Override
     public void deleteProduct(Long id) {
 
+    }
+
+    @Override
+    public Product addNewProduct(Product product) {
+        return null;
     }
 
     private Product convertFakeStoreProductToProduct(FakeStoreProductDto fakeStoreProductDto){
